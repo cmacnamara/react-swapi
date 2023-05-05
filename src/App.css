@@ -23,18 +23,36 @@ main {
   height: 100vh;
   width: 100%;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 20px;
 }
 
 .starship-info-card {
   display: flex;
-  height: 150px;
-  width: 300px;
+  flex-direction: column;
+  height: auto;
+  min-width: 330px;
   background-color: purple;
   padding: 10px;
   border-radius: 4px;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.return-btn {
+  background-color: gray;
+  padding: 4px;
+  width: 75px;
+  text-align: center;
+  border-radius: 4px;
+}
+
+.return-btn:hover {
+  background-color: rgb(83, 82, 82);
 }
 
 table {

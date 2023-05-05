@@ -2,6 +2,9 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
+// components
+import PilotList from "../../components/PilotList/PilotList";
+
 // services
 import { getStarship } from "../../services/sw-api";
 
@@ -32,10 +35,13 @@ const StarshipPage = () => {
             <td height={`${tableHeight}px`}><div className="table-data">MODEL:</div></td>
             <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.model}</div></td>
           </tr>
-          <tr>
-            <td><Link to={'/'}>RETURN</Link></td>
-          </tr>
         </table>
+        <PilotList />
+        <div className="btn-container">
+          <div className="return-btn">
+            <Link to={'/'}>RETURN</Link>
+          </div>
+        </div>
       </div>
     </main>
   );
