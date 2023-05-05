@@ -27,16 +27,18 @@ const StarshipPage = () => {
     <main className="starship-detail-page">
       <div className="starship-info-card">
         <table>
-          <tr>
-            <td height={`${tableHeight}px`}><div className="table-data">NAME:</div></td>
-            <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.name}</div></td>
-          </tr>
-          <tr>
-            <td height={`${tableHeight}px`}><div className="table-data">MODEL:</div></td>
-            <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.model}</div></td>
-          </tr>
+          <tbody>
+            <tr>
+              <td height={`${tableHeight}px`}><div className="table-data">NAME:</div></td>
+              <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.name}</div></td>
+            </tr>
+            <tr>
+              <td height={`${tableHeight}px`}><div className="table-data">MODEL:</div></td>
+              <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.model}</div></td>
+            </tr>
+          </tbody>
         </table>
-        <PilotList />
+        <PilotList pilotUrls={starshipDetails.pilots}/>
         <div className="btn-container">
           <div className="return-btn">
             <Link to={'/'}>RETURN</Link>

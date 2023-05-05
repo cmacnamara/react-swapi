@@ -55,6 +55,10 @@ main {
   background-color: rgb(83, 82, 82);
 }
 
+.pilot-container > h3 {
+  margin: 0;
+}
+
 table {
   width: 100%;
 }
