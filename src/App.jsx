@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// npm packages
+import { Routes, Route } from 'react-router-dom'
+
+// css
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+// pages
+import StarshipList from './pages/StarshipList/StarshipList'
+import StarshipPage from './pages/StarshipPage/StarshipPage'
 
+// components
+import NavBar from './components/NavBar/NavBar'
+
+function App() {
   return (
     <>
       <NavBar />
-      
+      <Routes>
+        <Route path='/' element={<StarshipList />}/>
+        <Route path='/:starshipId' element={<StarshipPage />}/>
+      </Routes>
     </>
   )
 }
