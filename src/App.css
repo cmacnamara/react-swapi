@@ -30,15 +30,20 @@ main {
 
 .starship-info-card {
   display: flex;
-  height: 300px;
-  width: 600px;
+  height: 150px;
+  width: 300px;
   background-color: purple;
   padding: 10px;
   border-radius: 4px;
 }
 
 table {
-  border: solid blue 2px;
+  width: 100%;
+}
+
+.table-data {
+  margin: 0;
+  padding: 0;
 }
 
 .link-container {

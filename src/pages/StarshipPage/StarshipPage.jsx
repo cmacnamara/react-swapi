@@ -1,6 +1,6 @@
 // npm packages
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 // services
 import { getStarship } from "../../services/sw-api";
@@ -8,6 +8,7 @@ import { getStarship } from "../../services/sw-api";
 const StarshipPage = () => {
   const [starshipDetails, setStarshipDetails] = useState([])
   const { starshipId } = useParams()
+  const tableHeight = 40;
 
   useEffect(() => {
     const fetchDetails = async () => {
@@ -24,12 +25,15 @@ const StarshipPage = () => {
       <div className="starship-info-card">
         <table>
           <tr>
-            <td>NAME:</td>
-            <td>{starshipDetails.name}</td>
+            <td height={`${tableHeight}px`}><div className="table-data">NAME:</div></td>
+            <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.name}</div></td>
           </tr>
           <tr>
-            <td>MODEL:</td>
-            <td>{starshipDetails.model}</td>
+            <td height={`${tableHeight}px`}><div className="table-data">MODEL:</div></td>
+            <td height={`${tableHeight}px`}><div className="table-data">{starshipDetails.model}</div></td>
+          </tr>
+          <tr>
+            <td><Link to={'/'}>RETURN</Link></td>
           </tr>
         </table>
       </div>
