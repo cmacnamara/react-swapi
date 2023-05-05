@@ -14,14 +14,19 @@ const StarshipList = () => {
       setStarshipList(starshipData)
     }
     fetchStarshipList()
-    console.log(starshipList);
+    console.log(starshipList, 'Starships');
   }, [])
 
-  if(!starshipList.length) return <h1>Loading Starships...</h1>
+  if(!starshipList.results?.length) return <h1>Loading Starships...</h1>
 
   return (  
-    <>
-    </>
+    <main>
+      {starshipList.results.map((starship, idx) => 
+        <div className="link-container" key={idx}>
+          <Link to={`/${idx}`}>{starship.name}</Link>
+        </div>
+      )}
+    </main>
   );
 }
 
